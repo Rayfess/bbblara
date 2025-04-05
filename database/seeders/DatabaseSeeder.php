@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => 'rahasia',
+            'role' => \App\Enums\UserRole::ADMIN->value,
         ]);
     }
 }
