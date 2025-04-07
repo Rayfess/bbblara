@@ -46,4 +46,9 @@ class User extends Authenticatable
             'role' => \App\Enums\UserRole::class,
         ];
     }
+
+    public function posts(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(\App\Models\Post::class);
+    }
 }

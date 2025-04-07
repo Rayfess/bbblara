@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class user_rolesTest extends TestCase
+class rolesTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -17,7 +17,9 @@ class user_rolesTest extends TestCase
     public function testRoles()
     {
         $user = User::factory()->create();
-
         $this->assertEquals(UserRole::USER, $user->role);
     }
+
+    
+
 }
