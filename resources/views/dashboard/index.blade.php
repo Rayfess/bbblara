@@ -4,7 +4,9 @@
       <div class="col-auto ">
         <div class="col">
           <a href="{{ route('dashboard.create') }}">
-            <button type="button" class="btn btn-primary ">Create</button>
+            <button type="button" class="btn btn-primary fw-medium ">Create new <span><i
+                  class="ms-2 fa-solid fa-plus"></i>
+              </span> </button>
           </a>
         </div>
         <table class="table table-striped table-hover ">
@@ -26,14 +28,16 @@
                 <td>{{ $data->role }}</td>
                 <td>{{ $data->created_at->diffForHumans() }}</td>
                 <td>{{ $data->updated_at->diffForHumans() }}</td>
-                <td class="d-flex gap-2">
+                <td class="d-inline-flex gap-2">
                   <a href="{{ route('dashboard.edit', $data->id) }}">
-                    <button type="button" class="btn btn-warning ">Update</button>
+                    <button type="button" class="btn btn-warning" style="font-size: small">
+                      <i class="fa-solid fa-pen-to-square"></i></button>
                   </a>
                   <form action="{{ route('dashboard.delete', $data->id) }}" method="post">
                     @csrf
                     @method('DESTROY')
-                    <button type="button" class="btn btn-danger ">Delete</button>
+                    <button type="button" class="btn btn-danger" style="font-size: small"><i
+                        class="fa-solid fa-trash"></i></button>
                   </form>
                 </td>
             @endforeach
