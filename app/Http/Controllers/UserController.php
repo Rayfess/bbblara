@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\UserRole;
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -19,13 +20,26 @@ class UserController extends Controller
         return view('dashboard.create');
     }
     
-    public function store(UserRequest $request)
+    // public function store(UserRequest $request)
+    // {
+    //     User::create($request->validated());
+    //     return redirect()->route('dashboard.index')->with('success', 'User Has Been added');
+    // }
+
+    public function edit(User $user) 
     {
-        User::create($request->validated());
-        return redirect()->route('dashboard.index')->with('success', 'User Has Been added');
+        return view('dashboard.edit', compact('user') + ['roles' => UserRole::options()]);
     }
-    public function show() {}
-    public function edit() {}
-    public function update() {}
-    public function delete() {}
+    public function update(User $user, UserRequest $request) 
+    {
+        $user->update($request->validated());
+        return redirect()->route('dashboard.index')->with('success', 'Successfully Edited');
+    }
+    // public function delete(User $user) 
+    // {
+    //     $user->delete();
+    //     return redirect()
+    //     ->route('dashboard.index', compact('user'))
+    //     ->with('success', 'Succesfully deleted');
+    // }
 }

@@ -25,7 +25,7 @@
               <tr>
                 <td>{{ $no + 1 }}</td>
                 <td>{{ $data->name }}</td>
-                <td>{{ $data->role }}</td>
+                <td>{{ $data->role->label() }}</td>
                 <td>{{ $data->created_at->diffForHumans() }}</td>
                 <td>{{ $data->updated_at->diffForHumans() }}</td>
                 <td class="d-inline-flex gap-2">
@@ -33,12 +33,12 @@
                     <button type="button" class="btn btn-warning" style="font-size: small">
                       <i class="fa-solid fa-pen-to-square"></i></button>
                   </a>
-                  <form action="{{ route('dashboard.delete', $data->id) }}" method="post">
+                  {{-- <form action="{{ route('dashboard.delete', $data->id) }}" method="post">
                     @csrf
-                    @method('DESTROY')
-                    <button type="button" class="btn btn-danger" style="font-size: small"><i
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger" style="font-size: small"><i
                         class="fa-solid fa-trash"></i></button>
-                  </form>
+                  </form> --}}
                 </td>
             @endforeach
             </tr>
