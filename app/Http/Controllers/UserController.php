@@ -35,11 +35,11 @@ class UserController extends Controller
         $user->update($request->validated());
         return redirect()->route('dashboard.index')->with('success', 'Successfully Edited');
     }
-    // public function delete(User $user) 
-    // {
-    //     $user->delete();
-    //     return redirect()
-    //     ->route('dashboard.index', compact('user'))
-    //     ->with('success', 'Succesfully deleted');
-    // }
+    public function delete(User $user) 
+    {
+        $user->delete();
+        return redirect()
+        ->route('dashboard.index')
+        ->with('success', 'Succesfully deleted');
+    }
 }

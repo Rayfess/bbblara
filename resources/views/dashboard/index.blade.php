@@ -33,12 +33,12 @@
                     <button type="button" class="btn btn-warning" style="font-size: small">
                       <i class="fa-solid fa-pen-to-square"></i></button>
                   </a>
-                  {{-- <form action="{{ route('dashboard.delete', $data->id) }}" method="post">
+                  <form action="{{ route('dashboard.delete', $data->id) }}" method="post">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger" style="font-size: small"><i
                         class="fa-solid fa-trash"></i></button>
-                  </form> --}}
+                  </form>
                 </td>
             @endforeach
             </tr>
