@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Enums\UserRole;
 use App\Http\Requests\UserRequest;
-use Illuminate\Http\Request;
 use App\Models\User;
 
 class UserController extends Controller
@@ -17,14 +16,14 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('dashboard.create');
+        return view('dashboard.create', ['roles' => UserRole::options()]);
     }
     
-    // public function store(UserRequest $request)
-    // {
-    //     User::create($request->validated());
-    //     return redirect()->route('dashboard.index')->with('success', 'User Has Been added');
-    // }
+    public function store(UserRequest $request)
+    {
+        User::create($request->validated());
+        return redirect()->route('dashboard.index')->with('success', 'User Has Been added');
+    }
 
     public function edit(User $user) 
     {

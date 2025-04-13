@@ -29,7 +29,7 @@
                 <td>{{ $data->created_at->diffForHumans() }}</td>
                 <td>{{ $data->updated_at->diffForHumans() }}</td>
                 <td class="d-inline-flex gap-2">
-                  <a href="{{ route('dashboard.edit', $data->id) }}">
+                  <a href="{{ route('dashboard.edit', $data->id) }}" class="text-decoration-none">
                     <button type="button" class="btn btn-warning" style="font-size: small">
                       <i class="fa-solid fa-pen-to-square"></i></button>
                   </a>
@@ -44,6 +44,16 @@
             </tr>
           </tbody>
         </table>
+      </div>
+      <div class="row">
+        <div class="col">
+          @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show">
+              {{ session('success') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          @endif
+        </div>
       </div>
     </div>
   </div>

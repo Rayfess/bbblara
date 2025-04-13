@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="col-auto mt-3">
-          <a href="{{ route('dashboard.index') }}">
+          <a href="{{ route('dashboard.index') }}" class="text-decoration-none">
             <button class="btn btn-danger" type="button">Cancel</button>
           </a>
           <button class="btn btn-primary" type="submit">Submit</button>
