@@ -7,8 +7,13 @@
         <div class="col-auto">
           <div class="form-floating mb-3">
             <input type="text" class="form-control" value="{{ old('name', $user->name) }}" id="floatingInputDisabled"
-              placeholder="Username" disabled>
+              placeholder="Name" disabled>
             <label for="floatingInputDisabled">Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" value="{{ old('username', $user->username) }}"
+              id="floatingInputDisabled" placeholder="Username" disabled>
+            <label for="floatingInputDisabled">Username</label>
           </div>
           <div class="form-floating mb-3">
             <input type="email" class="form-control" value="{{ old('email', $user->email) }}"

@@ -10,6 +10,11 @@
             <label for="floatingInput">Full Name</label>
           </div>
           <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="username" value="{{ old('username') }}" id="floatingInput"
+              placeholder="Username">
+            <label for="floatingInput">Username</label>
+          </div>
+          <div class="form-floating mb-3">
             <input type="email" class="form-control" name="email" value="{{ old('email') }}" id="floatingInput"
               placeholder="Email">
             <label for="floatingInputDisabled">Email</label>

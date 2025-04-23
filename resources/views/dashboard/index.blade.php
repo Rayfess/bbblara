@@ -14,6 +14,7 @@
             <tr>
               <th>#</th>
               <th>Name</th>
+              <th>Username</th>
               <th>Role</th>
               <th>Created_at</th>
               <th>Updated_at</th>
@@ -25,6 +26,7 @@
               <tr>
                 <td>{{ $no + 1 }}</td>
                 <td>{{ $data->name }}</td>
+                <td>{{ $data->username }}</td>
                 <td>{{ $data->role->label() }}</td>
                 <td>{{ $data->created_at->diffForHumans() }}</td>
                 <td>{{ $data->updated_at->diffForHumans() }}</td>

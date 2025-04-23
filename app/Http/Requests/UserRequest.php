@@ -23,7 +23,8 @@ class UserRequest extends FormRequest
 
         return [
             'name' => ['required','min:3'],
-            'email' => ['required','email', 'unique:users'],
+            'username' => ['required', 'min:8', 'string', 'unique:users,username'],
+            'email' => ['required','email', 'unique:users,email'],
             'password' => ['required','confirmed','min:6'],
             'role' => ['required', Rule::in(UserRole::values())],
         ];
