@@ -24,4 +24,4 @@ Route::post('/users', [UserController::class, 'store'])->name('dashboard.store')
 Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('dashboard.edit');
 
 Route::put('/users/{user}', [UserController::class, 'update'])->name('dashboard.update');
-Route::delete('/users/{user}', [UserController::class, 'delete'])->name('dashboard.delete');
+Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('dashboard.delete');

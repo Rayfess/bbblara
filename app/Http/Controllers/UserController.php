@@ -34,7 +34,7 @@ class UserController extends Controller
         $user->update($request->validated());
         return redirect()->route('dashboard.index')->with('success', 'Successfully Edited');
     }
-    public function delete(User $user) 
+    public function destroy(User $user) 
     {
         $user->delete();
         return redirect()
